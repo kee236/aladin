@@ -1,0 +1,28 @@
+name: Deploy
+
+# Trigger the workflow on push and
+# pull request events on the production branch
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+# Authenticate to the the server via ssh
+# and run our deployment script
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Deploy to server
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }}
+          username: ${{ secrets.USERNAME }}
+          port: ${{ secrets.PORT }}
+          password: ${{ secrets.PASSWORD }}
+          # key: ${{ secrets.SSHKEY }}
+          script: "cd /home/cp421486/repositories/aladin && /usr/local/cpanel/3rdparty/bin/git pull && /bin/cp -R * /home/cp421486/public_html/aladin"
