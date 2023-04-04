@@ -25,4 +25,4 @@ jobs:
           port: ${{ secrets.PORT }}
           password: ${{ secrets.PASSWORD }}
           # key: ${{ secrets.SSHKEY }}
-          script: "cd /home/cp421486/repositories/aladin && /usr/local/cpanel/3rdparty/bin/git pull && /bin/cp -R * /home/cp421486/public_html/aladin"
+          script: "cd /home/cp421486/public_html/aladin && /usr/local/cpanel/3rdparty/bin/git pull"
