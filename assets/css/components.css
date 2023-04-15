@@ -730,7 +730,7 @@ tr:first-child > td > .fc-day-grid-event {
   line-height: 42px;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 13.5px; 
+  font-size: 13.5px;
   }
 
 .select2-container--default .select2-selection--multiple .select2-selection__arrow, .select2-container--default .select2-selection--single .select2-selection__arrow {
@@ -1661,7 +1661,7 @@ tr:first-child > td > .fc-day-grid-event {
   .wizard-steps .wizard-step {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.03);
     background-color: #fff;
-    border-radius: 3px;
+    border-radius: 8px;
     border: none;
     position: relative;
     margin-bottom: 30px;

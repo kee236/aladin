@@ -370,7 +370,7 @@ select.form-control:not([size]):not([multiple]) {
     left: 1px;
     background: #fff;
     border-radius: 50%;
-    transition: .3s left; 
+    transition: .3s left;
   }
 
 .custom-switch-input:checked ~ .custom-switch-indicator {
@@ -606,6 +606,7 @@ select.form-control:not([size]):not([multiple]) {
   border-radius: 3px;
   border: none;
   position: relative;
+  border-radius: 15px;
   margin-bottom: 30px; }
   .card .card-header, .card .card-body, .card .card-footer {
     background-color: transparent;
@@ -650,7 +651,8 @@ select.form-control:not([size]):not([multiple]) {
     .card .card-header h4 {
       font-size: 16px;
       line-height: 28px;
-      color: var(--blue);
+      /* color: var(--blue); */
+      color: #394d5d;
       padding-right: 10px;
       margin-bottom: 0; }
       .card .card-header h4 + .card-header-action,
@@ -694,6 +696,8 @@ select.form-control:not([size]):not([multiple]) {
           border-radius: 30px 0 0 30px !important; }
   .card .card-footer {
     background-color: transparent;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
     border: none; }
   .card.card-mt {
     margin-top: 30px; }
@@ -853,7 +857,7 @@ select.form-control:not([size]):not([multiple]) {
         margin-top: 4px;
         text-overflow: ellipsis;
         overflow: hidden;
-        white-space: nowrap; 
+        white-space: nowrap;
         font-weight: 400;
       }
       .card .card-stats .card-stats-item .card-stats-item-count {
@@ -986,7 +990,7 @@ th{font-weight: 500;}
 .modal-header {
   border-bottom: none;
   padding-bottom: 5px; }
-  
+
   .modal-header h5 {
     font-size: 18px; }
 
@@ -1000,8 +1004,8 @@ th{font-weight: 500;}
   box-shadow: 0 3px 8px rgba(0, 0, 0, 0.05); }
 
 .modal.show .modal-content {
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); 
-  background: -webkit-linear-gradient(90deg,#FFFFFF,#FAFDFB,#D7E9F7);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  /* background: -webkit-linear-gradient(90deg,#FFFFFF,#FAFDFB,#D7E9F7); */
 }
 
 .modal-progress .modal-content {
@@ -1098,7 +1102,7 @@ th{font-weight: 500;}
   font-weight: 400;
   letter-spacing: .3px;
   border-radius: 30px;
-  font-size: 12px; 
+  font-size: 12px;
 }
 
   .badge.badge-warning {
@@ -1683,9 +1687,9 @@ h6 .badge {
       padding-bottom: 4px;
       font-weight: 500; }
       .navbar .nav-link.nav-link-user img {
-        width: 40px; 
+        width: 40px;
         /*border: 2px solid #064663*/
-      } 
+      }
       /*.navbar .facebook .nav-link.nav-link-user img {
         border: 2px solid orange;}*/
     .navbar .nav-link.nav-link-img {
@@ -2389,7 +2393,7 @@ pre {
       display: inline-block;
       font-size: 24px;
       margin-top: 3px;
-      color: var(--blue); }
+      color: #394d5d; }
     .section .section-header .section-header-back {
       margin-right: 15px; }
       .section .section-header .section-header-back .btn:hover {
@@ -2780,7 +2784,7 @@ body.layout-3 .main-footer {
   width: 100%;
   /*text-align: center;*/
   height: 60px;
-  line-height: 60px; 
+  line-height: 60px;
 padding-left: 22px;}
   .sidebar-brand.sidebar-brand-sm{
     text-align: center;
@@ -2832,7 +2836,8 @@ padding-left: 22px;}
       padding: 0 10px 0 20px;
       width: 100%;
       letter-spacing: .3px;
-      color: #064663;
+      /* color: #064663; */
+      color: #bdbebe;
       text-decoration: none; }
       .main-sidebar .sidebar-menu li a .badge {
         float: right;
@@ -2847,10 +2852,11 @@ padding-left: 22px;}
         font-weight: 450;
         width: 100%; }
       .main-sidebar .sidebar-menu li a span:hover {
-        color: var(--blue);
+        /* color: var(--blue); */
+        color: #efefef;
       font-weight: 500;  }
     .main-sidebar .sidebar-menu li.active a span {
-      color: var(--blue);
+      color: #daefff;
       font-weight: 700; }
       .main-sidebar .sidebar-menu li.active a.has-dropdown:after {
         -webkit-transform: translate(0, -50%) rotate(90deg);
@@ -2897,8 +2903,8 @@ padding-left: 22px;}
         padding-left: 10px; }
 
 .main-content {
-  padding-left: 310px;
-  padding-right: 12px;
+  padding-left: 330px;
+  padding-right: 30px;
   padding-top: 110px;
   width: 100%;
   position: relative; }

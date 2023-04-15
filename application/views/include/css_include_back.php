@@ -1,16 +1,18 @@
 <!-- General CSS Files -->
-<?php if($is_rtl) 
+<?php if($is_rtl)
 { ?>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/rtl/bootstrap.min.css">
-	<?php 
-} 
-else 
+	<?php
+}
+else
 { ?>
 	<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/bootstrap/css/bootstrap.min.css">
 	<?php
 } ?>
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
-<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/v4-shims.min.css">
+<!-- <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/all.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome/css/v4-shims.min.css"> -->
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome-6-4-0-web/css/all.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/fontawesome-6-4-0-web/css/v4-shims.min.css">
 
 <!-- CSS Libraries -->
 <link rel="stylesheet" href="<?php echo base_url(); ?>assets/modules/jqvmap/dist/jqvmap.min.css">
