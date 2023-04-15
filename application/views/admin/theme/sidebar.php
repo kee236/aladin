@@ -1,5 +1,5 @@
 <div class="main-sidebar">
-  <aside id="sidebar-wrapper">
+  <aside id="sidebar-wrapper" style="background-color:#183153;">
     <div class="sidebar-brand">
       <a href="<?php echo base_url(); ?>"><img src="<?php echo base_url(); ?>assets/img/logo.png" alt='<?php echo $this->config->item("product_short_name"); ?>'></a>
     </div>
@@ -11,11 +11,11 @@
       <?php
         $admin_double_level2=array('admin/activity_log','payment/accounts','payment/earning_summary','payment/transaction_log','blog/posts');
         $all_links=array();
-        foreach($menus as $single_menu) 
-        {          
+        foreach($menus as $single_menu)
+        {
             $menu_html= '';
             $only_admin = $single_menu['only_admin'];
-            $only_member = $single_menu['only_member']; 
+            $only_member = $single_menu['only_member'];
             $module_access = explode(',', $single_menu['module_access']);
             $module_access = array_filter($module_access);
             $color = $single_menu['color'] ?? 'var(--blue)';
@@ -33,12 +33,12 @@
             $extraText='';
             if($single_menu['add_ons_id']!='0' && $this->is_demo=='1') $extraText=' <label class="label label-warning" style="font-size:9px;padding:4px 3px;">Addon</label>';
 
-            if($single_menu['have_child']=='1') 
+            if($single_menu['have_child']=='1')
             {
               $dropdown_class1="nav-item dropdown";
               $dropdown_class2="has-dropdown";
             }
-            else 
+            else
             {
               $dropdown_class1="";
               $dropdown_class2="";
@@ -46,24 +46,24 @@
             if($single_menu['is_external']=='1') $site_url1=""; else $site_url1=site_url(); // if external link then no need to add site_url()
             if($single_menu['is_external']=='1') $parent_newtab=" target='_BLANK'"; else $parent_newtab=''; // if external link then open in new tab
             $color_css = $single_menu['url']!='social_accounts/index' ? "background: -webkit-linear-gradient(270deg,".$color.",".adjustBrightness($color,-0.65).");-webkit-background-clip: text;-webkit-text-fill-color: transparent;" : "color:".$color;
-            $menu_html .= "<li class='".$dropdown_class1."'><a {$parent_newtab} href='".$site_url1.$single_menu['url']."' class='nav-link ".$dropdown_class2."'><i class= '".$single_menu['icon']."' style='".$color_css."'></i> <span>".$this->lang->line($single_menu['name']).$extraText."</span></a>"; 
+            $menu_html .= "<li class='".$dropdown_class1."'><a {$parent_newtab} href='".$site_url1.$single_menu['url']."' class='nav-link ".$dropdown_class2."'><i class= '".$single_menu['icon']."' style='".$color_css."'></i> <span>".$this->lang->line($single_menu['name']).$extraText."</span></a>";
 
-            array_push($all_links, $site_url1.$single_menu['url']);  
+            array_push($all_links, $site_url1.$single_menu['url']);
 
             if(isset($menu_child_1_map[$single_menu['id']]) && count($menu_child_1_map[$single_menu['id']]) > 0)
             {
               $menu_html .= '<ul class="dropdown-menu">';
               foreach($menu_child_1_map[$single_menu['id']] as $single_child_menu)
-              {                  
+              {
 
                   $only_admin2 = $single_child_menu['only_admin'];
-                  $only_member2 = $single_child_menu['only_member']; 
+                  $only_member2 = $single_child_menu['only_member'];
                   $color2 = $single_child_menu['color'] ?? '';
                   if(empty($color2)) $color2 = $color;
-                  
+
                   if($this->session->userdata('user_type') == 'Admin' && $this->session->userdata('license_type') != 'double' && in_array($single_child_menu['url'], $admin_double_level2)) continue;
 
-                  if(($only_admin2 == '1' && $this->session->userdata('user_type') == 'Member') || ($only_member2 == '1' && $this->session->userdata('user_type') == 'Admin')) 
+                  if(($only_admin2 == '1' && $this->session->userdata('user_type') == 'Member') || ($only_member2 == '1' && $this->session->userdata('user_type') == 'Admin'))
                   continue;
 
                   if($single_child_menu['is_external']=='1') $site_url2=""; else $site_url2=site_url(); // if external link then no need to add site_url()
@@ -75,10 +75,10 @@
                   $module_access2 = explode(',', $single_child_menu['module_access']);
                   $module_access2 = array_filter($module_access2);
 
-                  
+
                   $hide_second_menu = '';
                   if($this->session->userdata('user_type') != 'Admin' && !empty($module_access2) && count(array_intersect($this->module_access, $module_access2))==0) $hide_second_menu = 'hidden';
-                  
+
                   $menu_html .= "<li class='".$hide_second_menu."'><a {$child_newtab} {$second_menu_href} class='nav-link'><i style='color:".$color2."' class='".$single_child_menu['icon']."'></i>".$this->lang->line($single_child_menu['name'])."</a>";
 
                   array_push($all_links, $site_url2.$single_child_menu['url']);
@@ -87,13 +87,13 @@
                   {
                     $menu_html .= "<ul class='dropdown-menu2'>";
                     foreach($menu_child_2_map[$single_child_menu['id']] as $single_child_menu_2)
-                    { 
+                    {
                       $only_admin3 = $single_child_menu_2['only_admin'];
                       $only_member3 = $single_child_menu_2['only_member'];
                       if(($only_admin3 == '1' && $this->session->userdata('user_type') == 'Member') || ($only_member3 == '1' && $this->session->userdata('user_type') == 'Admin'))
                         continue;
                       if($single_child_menu_2['is_external']=='1') $site_url3=""; else $site_url3=site_url(); // if external link then no need to add site_url()
-                      if($single_child_menu_2['is_external']=='1') $child2_newtab=" target='_BLANK'"; else $child2_newtab=''; // if external link then open in new tab   
+                      if($single_child_menu_2['is_external']=='1') $child2_newtab=" target='_BLANK'"; else $child2_newtab=''; // if external link then open in new tab
 
                       $menu_html .= "<li><a {$child2_newtab} href='".$site_url3.$single_child_menu_2['url']."' class='nav-link'><i class='".$single_child_menu_2['icon']."'></i> ".$this->lang->line($single_child_menu_2['name'])."</a></li>";
 
@@ -107,22 +107,22 @@
             }
 
             $menu_html .= "</li>";
-            
-            if($only_admin == '1') 
+
+            if($only_admin == '1')
             {
-              if($this->session->userdata('user_type') == 'Admin') 
+              if($this->session->userdata('user_type') == 'Admin')
               echo $menu_html;
             }
-            else if($only_member == '1') 
+            else if($only_member == '1')
             {
-              if($this->session->userdata('user_type') == 'Member') 
+              if($this->session->userdata('user_type') == 'Member')
               echo $menu_html;
             }
-            else 
+            else
             {
-              if($this->session->userdata("user_type")=="Admin" || empty($module_access) || count(array_intersect($this->module_access, $module_access))>0 ) 
+              if($this->session->userdata("user_type")=="Admin" || empty($module_access) || count(array_intersect($this->module_access, $module_access))>0 )
               echo $menu_html;
-            }             
+            }
         }
 
         if($this->session->userdata('license_type') == 'double' && $this->session->userdata('user_type')=='Member')
@@ -149,7 +149,7 @@
           $support_menu = $this->lang->line("Support Desk");
           $support_icon = "fa fa-headset";
           $support_url = base_url('simplesupport/tickets');
-          
+
           echo '
           <div class="mt-4 mb-4 p-3 hide-sidebar-mini">
             <a href="'.$support_url.'" class="btn btn-primary btn-lg btn-block btn-icon-split">
@@ -159,19 +159,19 @@
         }
     ?>
 
-    
+
   </aside>
 </div>
 
 
 
-<?php 
+<?php
 $all_links=array_unique($all_links);
-$unsetkey = array_search (base_url().'#', $all_links); 
+$unsetkey = array_search (base_url().'#', $all_links);
 if($unsetkey!=FALSE)
 unset($all_links[$unsetkey]); // removing links without a real url
 
-/* 
+/*
 links that are not in database [custom link = sibebar parent]
 No need to add a custom link if it's parent is controller/index
 */
@@ -211,7 +211,7 @@ $custom_links=array
   base_url("messenger_bot_enhancers/mme_link_edit")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/customer_chat_plugin_list")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/customer_chat_add")=>base_url("messenger_bot"),
-  base_url("messenger_bot_enhancers/customer_chat_edit")=>base_url("messenger_bot"),  
+  base_url("messenger_bot_enhancers/customer_chat_edit")=>base_url("messenger_bot"),
   base_url("messenger_bot_enhancers/subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
   base_url("messenger_bot_enhancers/create_subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
   base_url("messenger_bot_enhancers/edit_subscriber_broadcast_campaign")=>base_url("messenger_bot_broadcast"),
@@ -271,7 +271,7 @@ $custom_links=array
   base_url("comboposter/image_post/create") => base_url("ultrapost"),
   base_url("comboposter/video_post/create") => base_url("ultrapost"),
   base_url("comboposter/link_post/create") => base_url("ultrapost"),
-  base_url("comboposter/html_post/create") => base_url("ultrapost"),  
+  base_url("comboposter/html_post/create") => base_url("ultrapost"),
 
   base_url("comboposter/text_post/edit") => base_url("ultrapost"),
   base_url("comboposter/image_post/edit") => base_url("ultrapost"),
@@ -319,7 +319,7 @@ $custom_links[base_url("payment/transaction_log_manual")]=base_url("payment/tran
 
 $custom_links_assoc_str="{";
 $loop=0;
-foreach ($custom_links as $key => $value) 
+foreach ($custom_links as $key => $value)
 {
   $loop++;
   array_push($all_links, $key); // adding custom urls in all urls array
@@ -331,7 +331,7 @@ foreach ($custom_links as $key => $value)
 $custom_links_assoc_str.="}";
 // echo "<pre style='padding-left:300px;'>";
 // print_r($all_links);
-// echo "</pre>"; 
+// echo "</pre>";
 ?>
 
 
@@ -348,7 +348,7 @@ $custom_links_assoc_str.="}";
   function removeUrlLastPart(the_url)   // function that remove last segment of a url
   {
       var theurl = String(the_url).split('/');
-      theurl.pop();      
+      theurl.pop();
       var answer=theurl.join('/');
       return answer;
   }
@@ -369,15 +369,15 @@ $custom_links_assoc_str.="}";
   }
 
   if(jQuery.inArray(sideBarURL, custom_links_JS) !== -1) // if the current link match custom urls
-  {    
+  {
     sideBarURL=matchCustomUrl(sideBarURL);
-  } 
+  }
   else if(jQuery.inArray(sideBarURL, all_links_JS) !== -1) // if the current link match known urls, this check is done later becuase all_links_JS also contains custom urls
   {
      sideBarURL=sideBarURL;
   }
   else // url does not match any of known urls
-  {  
+  {
     var remove_times=1;
     var temp_URL=sideBarURL;
     var temp_URL2="";
@@ -412,7 +412,7 @@ $custom_links_assoc_str.="}";
       }
       remove_times++;
       if(temp_URL.trim()=="") break;
-    }    
+    }
   }
 
   $('ul.sidebar-menu a').filter(function() {

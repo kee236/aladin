@@ -1,5 +1,5 @@
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@0.7.0"></script>
-<?php 
+<?php
 $user_id_url = $this->uri->segment(3);
 if(empty($user_id_url)) $user_id_url = 0;
 
@@ -21,13 +21,13 @@ $month_name_array = array(
 
 
 <section class="section">
-    <?php 
+    <?php
     if($other_dashboard=='1')
     { ?>
       <div class="section-header">
         <h1><i class="fas fa-fire"></i> <?php echo $this->lang->line('Dashboard for')." ".$user_name." [".$user_email."]"; ?> </h1>
       </div>
-    <?php 
+    <?php
     }
    ?>
 
@@ -37,7 +37,7 @@ $month_name_array = array(
 
     <div class="row statistics-box justify-content-md-center">
       <div class="col-lg-4 col-md-6 col-sm-12 pr-md-1">
-        <div class="card card-statistic-2 border">
+        <div class="card card-statistic-2">
           <div class="card-chart">
             <canvas id="subscribers_chart_1" height="72"></canvas>
           </div>
@@ -83,7 +83,7 @@ $month_name_array = array(
                   <li><a href="#" class="dropdown-item month_change <?php if($month_number == '12') echo 'active'; ?>" month_no="12"><?php echo $this->lang->line('December');?></a></li>
                   <li><a href="#" class="dropdown-item month_change <?php if($month_number == 'year') echo 'active'; ?>" month_no="year"><?php echo $this->lang->line('This Year');?></a></li>
                 </ul>
-                
+
               </h4>
             </div>
             <div class="card-body text-primary gradient" id="total_subscribers"><?php echo custom_number_format($total_sub); ?></div>
@@ -92,7 +92,7 @@ $month_name_array = array(
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12 pl-md-1 pr-md-1">
-        <div class="card card-statistic-2 border">
+        <div class="card card-statistic-2">
           <div class="card-stats">
             <div class="statistic-details mt-0">
               <div class="statistic-details-item" title="<?php echo $this->lang->line('Comment Reply Campaign Enabled'); ?>" data-toggle="tooltip">
@@ -111,7 +111,7 @@ $month_name_array = array(
 
             <ul class="list-unstyled list-unstyled-border mb-0">
               <li class="media">
-                <div class="media-body">                  
+                <div class="media-body">
                   <div class="mt-1">
                     <div class="budget-price">
                       <div class="budget-price-square bg-primary" data-width="100%" style="width: 100%;"></div>
@@ -120,7 +120,7 @@ $month_name_array = array(
                 </div>
               </li>
             </ul>
-            
+
 
             <div class="card-stats-items mb-1">
               <div class="card-stats-item">
@@ -141,7 +141,7 @@ $month_name_array = array(
             <i class="fab fa-facebook-messenger"></i>
           </div>
           <div class="card-wrap">
-            
+
             <div class="card-header">
               <h4 class="text-dark"><?php echo $this->lang->line('Bot Enabled'); ?></h4>
             </div>
@@ -152,7 +152,7 @@ $month_name_array = array(
       </div>
 
       <div class="col-lg-4 col-md-6 col-sm-12 pl-md-1">
-        <div class="card card-statistic-2 border">
+        <div class="card card-statistic-2">
           <div class="card-chart">
             <canvas id="ecommerce_chart_1" height="72"></canvas>
           </div>
@@ -208,17 +208,17 @@ $month_name_array = array(
                     <a class="dropdown-item currency_item" store_id="<?php echo $single_currency; ?>" href="#"><?php echo $single_currency; ?></a>
                     <?php } ?>
                   </div>
-                </div> 
+                </div>
               </h4>
             </div>
             <div class="card-body text-warning gradient" id="total_earning">
-              <?php  echo custom_number_format($summary_earning); ?>     
+              <?php  echo custom_number_format($summary_earning); ?>
             </div>
           </div>
         </div>
       </div>
     </div>
-  
+
 
 
     <div class="row">
@@ -231,13 +231,13 @@ $month_name_array = array(
             <div class="row">
               <div class="col-12 col-md-10">
               <canvas id="subscribers_stats" height="120"></canvas>
-                
+
               </div>
               <div class="col-12 col-md-2">
                 <div class="statistic-details mt-sm-4 d-block">
                   <div class="statistic-details-item">
                     <div class="detail-value text-danger gradient">
-                      <?php 
+                      <?php
                         if($subscribers_gain >= 1000) {
                            echo $subscribers_gain/1000 . "k";
                         }
@@ -250,7 +250,7 @@ $month_name_array = array(
                   </div>
                   <div class="statistic-details-item">
                     <div class="detail-value text-primary gradient">
-                      <?php 
+                      <?php
                         if($email_gain >= 1000) {
                            echo $email_gain/1000 . "k";
                         }
@@ -263,7 +263,7 @@ $month_name_array = array(
                   </div>
                   <div class="statistic-details-item">
                     <div class="detail-value text-secondary gradient">
-                      <?php 
+                      <?php
                         if($phone_gain >= 1000) {
                            echo $phone_gain/1000 . "k";
                         }
@@ -315,13 +315,13 @@ $month_name_array = array(
             <h4><i class="fas fa-user-circle"></i> <?php echo $this->lang->line('Subscribers from Different Sources - 12 Months'); ?></h4>
           </div>
           <div class="card-body">
-            <div class="row">             
+            <div class="row">
 
               <div class="col-12 col-md-7">
                 <div class="row mt-3">
                   <div class="col-6">
                     <ul class="list-unstyled list-unstyled-border list-unstyled-noborder mb-0">
-                      <li class="media"> 
+                      <li class="media">
                         <img class="img-fluid mt-1" src="<?php echo base_url('assets/img/icon/checkbox.png'); ?>" alt="image" width="30">
                         <div class="media-body ml-3">
                           <div class="media-title fs-14"><?php echo $refferer_source_info['checkbox_plugin']['title']; ?></div>
@@ -377,21 +377,21 @@ $month_name_array = array(
                   <canvas id="social_network_shared_data" height="170"></canvas>
                 </div>
               </div>
-              
+
             </div>
           </div>
         </div>
-      </div>   
+      </div>
     </div>
 
-    <!--<div class="row no-gutters mb-4">     
+    <!--<div class="row no-gutters mb-4">
       <div class="col-12 col-md-4 ltr">
         <div class="card card-large-icons card-condensed gradient">
           <div class="card-icon mr-3 ml-3">
             <canvas id="fbsubscribers" height="100"></canvas>
           </div>
           <div class="card-body justify-content-center align-self-center font-weight-bold text-primary gradient"><?php echo $this->lang->line('Facebook Subscribers'); ?> (<?php echo $fsub_chart_data??0; ?>%)</div>
-        </div>  
+        </div>
       </div>
       <div class="col-12 col-md-4 ltr">
         <div class="card card-large-icons card-condensed border-right border-left no_radius">
@@ -448,32 +448,32 @@ $month_name_array = array(
                 <div class="nicescroll" id="cart_activities">
                   <ul class="list-unstyled list-unstyled-border">
                     <?php
-                    if(empty($cart_data_graph)) echo '<div class="alert alert-light">'.$this->lang->line("No activity found").'</div>';                               
-                    foreach ($cart_data_graph as $key => $value) 
-                    { 
+                    if(empty($cart_data_graph)) echo '<div class="alert alert-light">'.$this->lang->line("No activity found").'</div>';
+                    foreach ($cart_data_graph as $key => $value)
+                    {
                       $hook_ago = date_time_calculator($value['updated_at'],true);
-                      if($value['action_type']=='add') 
+                      if($value['action_type']=='add')
                       {
                         $hook_icon ='fas fa-cart-plus';
                         $hook_color = 'text-primary';
                         $hook_activity = $this->lang->line("Item added");
                       }
-                      else if($value['action_type']=='remove') 
+                      else if($value['action_type']=='remove')
                       {
                         $hook_icon ='fas fa-cart-arrow-down';
                         $hook_color = 'text-danger';
                         $hook_activity = $this->lang->line("Item removed");
                       }
-                      else 
+                      else
                       {
                         $hook_icon = 'fas fa-shopping-bag';
                         $hook_color = 'text-success';
                         $currency_icon = isset($currency_icons[strtoupper($value['currency'])]) ? $currency_icons[strtoupper($value['currency'])] : '';
                         $hook_activity = $this->lang->line("Checkout").' <span class="">('.$currency_icon.$value['payment_amount'].')</span>';
                       }
-                     
+
                       $hook_class = $hook_icon.' '.$hook_color;
-                      
+
                       $hook_user = ($value['first_name']!='') ? $value['first_name']." ".$value['last_name'] : $value['full_name'];
 
                       $profile_pic = ($value['profile_pic']!="") ? "<img class='mr-3 rounded-circle' style='height:40px;width:40px;' src='".$value["profile_pic"]."'>" :  "<img class='mr-3  rounded-circle' style='height:40px;width:40px;' src='".base_url('assets/img/avatar/avatar-1.png')."'>";
@@ -481,22 +481,22 @@ $month_name_array = array(
                       $path = ($value["image_path"]!="") ? "<img class='mr-3 rounded-circle' style='height:40px;width:40px;' src='".base_url($value["image_path"])."'></a>" : $profile_pic;
 
                       echo
-                      ' 
+                      '
                       <li class="media webhook_data pointer" data-id="'.$value['id'].'" data-toggle="tooltip" title="'.$value['email']." (".$value['subscriber_id'].')">
                           '.$path.'
                           <div class="media-body">
                             <div class=""><i class="'.$hook_class.'"></i> '.$hook_user.'</div>
                             <span class="text-small">'.$hook_activity.' : '.$hook_ago.'</span>
                           </div>
-                      </li>';                         
-                    } 
-                    ?>                               
+                      </li>';
+                    }
+                    ?>
                   </ul>
                 </div>
               </div>
               <div class="col-3 col-md-2 col-lg-1">
                 <div class="nicescroll" id="cart_recent_sales">
-                    <?php 
+                    <?php
                       foreach($top_products as $product) :
 
                         $thumb = (isset($product["thumbnail"]) && !empty($product["thumbnail"])) ? base_url('upload/ecommerce/'.$product["thumbnail"]) : base_url('assets/img/products/product-1.jpg');
@@ -507,7 +507,7 @@ $month_name_array = array(
 
                     <div>
                       <div class="product-item">
-                        <div class="product-image">                                  
+                        <div class="product-image">
                           <a target="_BLANK" href="<?php echo base_url('ecommerce/product/'.$product['product_id']);?>" ><img  src="<?php echo $thumb; ?>" class="img-fluid rounded-circle" style="width: 80px;height: 80px;"></a>
                         </div>
                         <div class="product-details mb-2">
@@ -518,7 +518,7 @@ $month_name_array = array(
                     </div>
                   <?php endforeach; ?>
                 </div>
-                  
+
               </div>
             </div>
           </div>
@@ -539,7 +539,7 @@ $month_name_array = array(
                   <div class="card-body p-0 pb-4">
                     <div class="row no-gutters">
                       <div class="col-12 col-md-6">
-                        <canvas id="email_campaign" height="230"></canvas>                        
+                        <canvas id="email_campaign" height="230"></canvas>
                         <div class="pt-4 text-center">
                           <i class="fas fa-circle text-danger"></i> <?php echo $this->lang->line('Pending') ?>
                           <i class="fas fa-circle text-warning"></i> <?php echo $this->lang->line('Processing') ?>
@@ -589,9 +589,9 @@ $month_name_array = array(
                       </div>
                     </div>
 
-                  
+
                   </div>
-                </div>          
+                </div>
               </div>
 
               <div class="col-12 col-md-6">
@@ -601,7 +601,7 @@ $month_name_array = array(
                   </div>
                   <div class="card-body p-0 pb-4">
                     <div class="row no-gutters">
-                      <div class="col-12 col-md-6">                        
+                      <div class="col-12 col-md-6">
                         <canvas id="sms_campaign" height="230"></canvas>
                         <div class="pt-4 text-center">
                           <i class="fas fa-circle text-danger"></i> <?php echo $this->lang->line('Pending') ?>
@@ -610,7 +610,7 @@ $month_name_array = array(
                         </div>
                       </div>
                       <div class="col-12 col-md-6">
-                        
+
                         <div class="mt-4 campaign_stats">
                           <table class="table table-borderless table-sm">
                             <tbody>
@@ -677,14 +677,14 @@ $month_name_array = array(
         </div>
       </div>
     </div>
-    
+
   <?php if($other_dashboard == 1) : ?>
   </div>
   <?php endif; ?>
 </section>
 
 <script type="text/javascript">
-  
+
   var subscribers_chart = document.getElementById("subscribers_chart_1").getContext('2d');
 
   var sevendays_subscriber_chart_bgcolor = subscribers_chart.createLinearGradient(0, 0, 0, 70);
@@ -746,7 +746,7 @@ $month_name_array = array(
       }
     }
   });
-    
+
   var ecommerce_chart = document.getElementById("ecommerce_chart_1").getContext('2d');
 
   // var sevendays_subscriber_chart_bgcolor = ecommerce_chart.createLinearGradient(0, 0, 0, 70);
@@ -822,15 +822,15 @@ $month_name_array = array(
   var v3 = '<?php echo $this->lang->line("Phone Gain"); ?>';
   var gradient_warning = ctx.createLinearGradient(0, 0, 0, 600);
   gradient_warning.addColorStop(0, 'rgba(252, 74, 26)');
-  gradient_warning.addColorStop(1, 'rgba(247, 183, 51)'); 
+  gradient_warning.addColorStop(1, 'rgba(247, 183, 51)');
 
   var gradient_secondary = ctx.createLinearGradient(0, 0, 0, 600);
   gradient_secondary.addColorStop(0, 'rgba(241, 71, 147)');
-  gradient_secondary.addColorStop(1, 'rgba(58, 9, 137)'); 
+  gradient_secondary.addColorStop(1, 'rgba(58, 9, 137)');
 
   var gradient_primary = ctx.createLinearGradient(0, 0, 0, 600);
   gradient_primary.addColorStop(0, 'rgba(13, 139, 241)');
-  gradient_primary.addColorStop(1, 'rgba(7, 65, 204)'); 
+  gradient_primary.addColorStop(1, 'rgba(7, 65, 204)');
 
   const labels = <?php echo json_encode(array_values($last_tweleve_month)); ?>;
 
@@ -894,34 +894,34 @@ $month_name_array = array(
 </script>
 
 <script>
-    $(document).ready(function() {   
+    $(document).ready(function() {
 
-      var stepsize = "<?php echo $step_size; ?>"; 
+      var stepsize = "<?php echo $step_size; ?>";
       var fb_vs_ig_vs_web_earning_chart = document.getElementById('myChart_ecommerce').getContext('2d');
 
       var gradient_info = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_info.addColorStop(0, 'rgba(21, 233, 255, .8)');
-      gradient_info.addColorStop(1, 'rgba(19, 29, 75, .8)'); 
+      gradient_info.addColorStop(1, 'rgba(19, 29, 75, .8)');
 
       var gradient_success = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_success.addColorStop(0, 'rgba(83, 161, 100,.8)');
-      gradient_success.addColorStop(1, 'rgba(19, 29, 75, .8)'); 
+      gradient_success.addColorStop(1, 'rgba(19, 29, 75, .8)');
 
       var gradient_primary = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_primary.addColorStop(0, 'rgba(13, 139, 241, .6)');
-      gradient_primary.addColorStop(1, 'rgba(7, 65, 204, .6)'); 
+      gradient_primary.addColorStop(1, 'rgba(7, 65, 204, .6)');
 
       var gradient_secondary = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_secondary.addColorStop(0, 'rgba(241, 71, 147, .7)');
-      gradient_secondary.addColorStop(1, 'rgba(58, 9, 137, .7)'); 
+      gradient_secondary.addColorStop(1, 'rgba(58, 9, 137, .7)');
 
       var gradient_warning = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_warning.addColorStop(0, 'rgba(252, 74, 26, .8)');
-      gradient_warning.addColorStop(1, 'rgba(247, 183, 51, .8)'); 
+      gradient_warning.addColorStop(1, 'rgba(247, 183, 51, .8)');
 
       var gradient_danger = fb_vs_ig_vs_web_earning_chart.createLinearGradient(0, 0, 0, 600);
       gradient_danger.addColorStop(0, 'rgba(255, 106, 0, .8)');
-      gradient_danger.addColorStop(1, 'rgba(238, 9, 121, .8)'); 
+      gradient_danger.addColorStop(1, 'rgba(238, 9, 121, .8)');
 
       var myChart1 = new Chart(fb_vs_ig_vs_web_earning_chart, {
         type: 'line',
@@ -939,7 +939,7 @@ $month_name_array = array(
             pointRadius: 0,
             pointBackgroundColor: 'transparent',
             pointHoverBackgroundColor: 'transparent',
-          },          
+          },
           {
             label: '<?php echo $this->lang->line('Instagram'); ?>',
             data: <?php echo json_encode(array_values($ig_earning_chart_values));?>,
@@ -963,7 +963,7 @@ $month_name_array = array(
             pointRadius: 0,
             pointBackgroundColor: 'transparent',
             pointHoverBackgroundColor: 'transparent',
-          }]          
+          }]
         },
         options: {
           responsive: true,
@@ -1227,7 +1227,7 @@ $month_name_array = array(
         data: only_values,
         backgroundColor: bg_linear_gradient,
         pointColor:bg_linear_gradient,
-        
+
       }],
       labels: only_keys,
     },
@@ -1248,7 +1248,7 @@ $month_name_array = array(
       hover: {
          mode: false
        },
-      
+
       animation: {
         animateScale: true,
         animateRotate: true
@@ -1281,7 +1281,7 @@ $month_name_array = array(
       tooltips: {
           enabled: false,
       },
-      
+
       plugins: {
           datalabels: {
               formatter: (value, ctx) => {
@@ -1326,8 +1326,8 @@ $month_name_array = array(
       borderColor: "#fff"
   }];
 
-  var options2 = {  
-      responsive: true,  
+  var options2 = {
+      responsive: true,
       cutoutPercentage: 20,
       tooltips: {
           enabled: false,
@@ -1388,11 +1388,11 @@ $month_name_array = array(
           location.reload();
         }
       })
-      
+
     });
-		
+
 		$(document).on('click', '.month_change', function(e) {
-		  e.preventDefault(); 
+		  e.preventDefault();
 		  $(".month_change").removeClass('active');
 		  $(this).addClass('active');
 		  var month_no = $(this).attr('month_no');
@@ -1403,7 +1403,7 @@ $month_name_array = array(
 		  $("#loader").removeClass('hidden');
 
       var url = "<?php echo base_url('dashboard/get_first_div_content')?>";
-      
+
 		  $.ajax({
 		     type:'POST' ,
 		     url: url,
@@ -1420,9 +1420,9 @@ $month_name_array = array(
 		     }
 		  });
 		});
-    
+
     $(document).on('click', '.ecommerce_month_change', function(e) {
-      e.preventDefault(); 
+      e.preventDefault();
       $(".ecommerce_month_change").removeClass('active');
       $(this).addClass('active');
       var month_no = $(this).attr('month_no');
@@ -1431,7 +1431,7 @@ $month_name_array = array(
 
       $(".ecommerce_month_change_middle_content").hide();
       $("#e_loader").removeClass('hidden');
-      
+
       var url = "<?php echo base_url('dashboard/get_ecommerce_div_content')?>";
 
       $.ajax({
