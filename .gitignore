@@ -2,3 +2,4 @@ application/config/database.php
 application/cache/*
 application/config/my_config.php
 application/logs/*
+upload/*
