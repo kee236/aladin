@@ -16,7 +16,7 @@
 .publish_item_group{max-height: 400px;overflow-y: auto; overflow-x: hidden;}
 .media .media-title{font-size: 13.5px !important;}
 
-.card{margin-bottom:0;border-radius: 0;}
+.card{margin-bottom:0;border-radius: 15px;}
 .main_card{box-shadow: none !important;height: 100%;}
 .collef{margin-bottom: 20px;}
 .colmid{margin-bottom: 20px;}

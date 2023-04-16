@@ -42,16 +42,16 @@
   .multi_layout .card-statistic-1{border-radius: 0;}
   .multi_layout h6.page_name{font-size: 14px;margin:10px 0;}
   .multi_layout .card .card-header input{max-width: 100% !important;}
-  .multi_layout .card .card-header h4 a{font-weight: 700 !important;}  
+  .multi_layout .card .card-header h4 a{font-weight: 700 !important;}
   .product-item .product-name{font-weight: 500;}
   .badge-status{border-color:#eee;}
   /* #right_column_title i{font-size: 17px;} */
   #cart_activities{height: 710px;overflow:auto;}
   ::placeholder {
     color: #ccc !important;
-  } 
+  }
 
-  #right_column_bottom_content .no_shadow .card-header,#right_column_bottom_content .no_shadow .card-body{padding:20px 0;}  
+  #right_column_bottom_content .no_shadow .card-header,#right_column_bottom_content .no_shadow .card-body{padding:20px 0;}
   /*.multi_layout .card-statistic-1 .card-icon{border: .5px solid #dee2e6;}*/
   .multi_layout .card.card-statistic-1 .card-icon, .card.card-statistic-2 .card-icon{margin:0;border-radius: 4px 0 0 4px;background: transparent;}
   .multi_layout .card-statistic-1{border:.5px solid #dee2e6;border-radius: 4px;margin-bottom: 5px;}
@@ -69,8 +69,8 @@
     <div class="section-header-button">
       <a title="<?php echo $this->lang->line('Create Store');?>" data-toggle="tooltip" class="btn btn-primary iframed" href="<?php echo base_url("ecommerce/add_store");?>">
         <i class="fas fa-plus-circle"></i> <?php echo $this->lang->line("Create Store"); ?>
-      </a> 
-    </div>    
+      </a>
+    </div>
   </div>
 
   <div class="section-body">
@@ -80,7 +80,7 @@
         <div class="row">
           <div class="col-12 col-sm-12 col-md-12 col-lg-8">
             <div class="breadcrumb-item">
-              <form method="POST" action="<?php echo base_url('ecommerce/store_list') ?>">          
+              <form method="POST" action="<?php echo base_url('ecommerce/store_list') ?>">
                 <div class="input-group">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
@@ -88,13 +88,13 @@
                     </div>
                   </div>
                   <input type="hidden" name="store_id" id="store_id">
-                  <input type="text" class="form-control datepicker_x" value="<?php echo $this->session->userdata("ecommerce_from_date"); ?>" id="from_date" name="from_date" style="width:115px"> 
+                  <input type="text" class="form-control datepicker_x" value="<?php echo $this->session->userdata("ecommerce_from_date"); ?>" id="from_date" name="from_date" style="width:115px">
                   <div class="input-group-prepend">
                     <div class="input-group-text">
                       -
                     </div>
                   </div>
-                  <input type="text" class="form-control datepicker_x" value="<?php echo $this->session->userdata("ecommerce_to_date"); ?>" id="to_date" name="to_date" style="width:115px">                 
+                  <input type="text" class="form-control datepicker_x" value="<?php echo $this->session->userdata("ecommerce_to_date"); ?>" id="to_date" name="to_date" style="width:115px">
                   <select name='currency' id='currency' class='form-control select2' style="width: 85px;">
                   <?php
                   foreach ($currecny_list_all as $key => $value)
@@ -117,7 +117,7 @@
 
 
     <?php if(empty($store_data))
-    { ?>       
+    { ?>
     <div class="card" id="nodata">
       <div class="card-body">
         <div class="mt-3">
@@ -132,10 +132,10 @@
       </div>
     </div>
 
-    <?php 
+    <?php
     }
     else
-    { 
+    {
       $summary_earning = 0;
       $summary_recovered_cart = 0;
       $summary_reminder_cart = 0;
@@ -143,27 +143,27 @@
       $earning_chart_labels = array();
       $earning_chart_values = array();
       // $top_buyers = array();
-   
-      $from_date = strtotime($this->session->userdata("ecommerce_from_date")); 
-      $to_date = strtotime($this->session->userdata("ecommerce_to_date")); 
-      do 
+
+      $from_date = strtotime($this->session->userdata("ecommerce_from_date"));
+      $to_date = strtotime($this->session->userdata("ecommerce_to_date"));
+      do
       {
          $temp = date("Y-m-d",$from_date);
          $temp2 = date("j M",$from_date);;
          $earning_chart_values[$temp] = 0;
          $earning_chart_labels[] = $temp2;
-         $from_date = strtotime('+1 day',$from_date); 
-      } 
+         $from_date = strtotime('+1 day',$from_date);
+      }
       while ($from_date <= $to_date);
 
-      foreach ($cart_data as $key => $value) 
+      foreach ($cart_data as $key => $value)
       {
-        if($value['action_type']=='checkout') $summary_checkout_cart++;   
+        if($value['action_type']=='checkout') $summary_checkout_cart++;
 
         if($value["last_completed_hour"]>0)
         {
           $summary_reminder_cart++;
-          if($value['action_type']=='checkout') $summary_recovered_cart++;          
+          if($value['action_type']=='checkout') $summary_recovered_cart++;
         }
 
         if($value["status"]!='pending' && $value["status"]!='rejected')
@@ -180,7 +180,7 @@
           // }
         }
       }
-      // arsort($top_buyers);   
+      // arsort($top_buyers);
       ?>
       <div class="row multi_layout">
 
@@ -196,24 +196,24 @@
             </div>
             <div class="card-body padding-0">
               <ul class="list-group" id="page_list_ul" style="margin-top: 20px;">
-                <?php $i=0; 
+                <?php $i=0;
                 $current_store_data =  array();
-                foreach($store_data as $value) 
-                { 
+                foreach($store_data as $value)
+                {
                   if($value['id']==$this->session->userdata("ecommerce_selected_store")) $current_store_data = $value;
-                  
-                  ?> 
+
+                  ?>
                   <li class="list-group-item <?php if($value['id']==$this->session->userdata("ecommerce_selected_store")) echo 'active'; ?> page_list_item" page_table_id="<?php echo $value['id']; ?>">
                     <h6 class="page_name"><?php if($value['store_type'] == 'digital') echo '<i class="fas fa-cloud-download-alt"></i>'; else echo '<i class="fas fa-store"></i>'; ?> <?php echo str_replace(array('https://','http://'), '', $value['store_name']); ?></h6>
                   </li>
-                  <?php $i++; 
-                } ?>                
+                  <?php $i++;
+                } ?>
               </ul>
             </div>
-          </div>          
+          </div>
         </div>
 
-        <?php 
+        <?php
         $config_currency  = isset($ecommerce_config['currency']) ? $ecommerce_config['currency'] : "USD";
         if($this->session->userdata("ecommerce_currency")=='')
         $store_currency = isset($currency_icons[$config_currency]) ? $currency_icons[$config_currency] : "$";
@@ -274,7 +274,7 @@
             'title'=>$this->lang->line('Categories'),
             'icon'=>'fas fa-columns',
             'attr'=>''
-          ),          
+          ),
           17 => array
           (
             'class'=>'iframed',
@@ -306,7 +306,7 @@
             'title'=>$this->lang->line('Delivery Points'),
             'icon'=>'fas fa-map-marker-alt',
             'attr'=>''
-          ),          
+          ),
           24 => array
           (
             'class'=>'iframed',
@@ -384,19 +384,44 @@
 
         ?>
 
+        <div class="col-lg-2 collef d-none d-lg-block" style="border:.5px solid #dee2e6;">
+          <div class="card main_card" >
+            <div class="card-header">
+                <h4><i class="fas fa-paper-plane"></i> <?php echo $this->lang->line("Actions"); ?></h4>
+            </div>
+            <div class="card-body padding-0">
+              <ul class="nav nav-pills flex-column settings_menu" style="margin-top: 20px;">
+                 <?php
+                    $count_menu=0;
+                    foreach ($menu_array as $key => $value) {
+                      $count_menu++;
+                      $active_class = ($count_menu==1) ? 'active' : '';
+
+                      if($current_store_data['store_type'] == 'digital' && $value['href'] == base_url('ecommerce/business_hour_settings')) continue;
+
+                      if($current_store_data['store_type'] == 'digital' && $value['href'] == base_url('ecommerce/pickup_point_list')) continue;
+
+                      echo ' <li class="nav-item"><a  data-original-title="'.$value['title'].'" href="'.$value['href'].'" class="no_radius nav-link '.$value['class'].' '.$active_class.'" '.$value['attr'].'><i class="'.$value['icon'].'"></i> '.$value['title'].'</a></li>';
+                    }
+                 ?>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         <div class="col-12 col-md-9 col-lg-8 colrig" id="right_column">
 
           <div class="card main_card">
             <div class="card-header">
               <div class="col-8 p-0">
                 <h4 id="right_column_title"><i class="fas fa-tachometer-alt"></i> <a title="<?php echo $this->lang->line("Visit Store"); ?>" data-toggle="tooltip" target="_BLANK" href="<?php echo base_url('ecommerce/store/'.$current_store_data['store_unique_id']); ?>"><?php echo str_replace(array('https://','http://'), '', $current_store_data['store_name']); ?></a> (
-                    <?php if($current_store_data['page_id'] != 0) : 
+                    <?php if($current_store_data['page_id'] != 0) :
                       echo '<a title="'.$this->lang->line("Visit Page").'" data-toggle="tooltip" target="_BLANK" href="https://facebook.com/'.$current_store_data['fb_page_id'].'">'.$current_store_data['page_name'].'</a>';
                      else :
                         echo $this->lang->line('No Page');
                       ?>
                     <?php endif; ?>
-                  ) 
+                  )
                   <span id='iframe_title'> : <?php echo $this->lang->line("Dashboard"); ?></span></h4>
               </div>
               <div class="col-4 p-0 d-lg-none">
@@ -414,7 +439,7 @@
                     }
                     ?>
                   </ul>
-                </div> 
+                </div>
               </div>
             </div>
 
@@ -423,7 +448,7 @@
               <div class="row hide_in_iframe mt-1">
                 <div class="col-12">
 
-                  <div id="right_column_content">              
+                  <div id="right_column_content">
 
                     <div id="right_column_bottom_content">
 
@@ -524,14 +549,14 @@
                             </div>
                             <div class="card-body">
                               <div class="owl-carousel owl-theme" id="products-carousel">
-                                  <?php                                 
-                                  $product_list_assoc = array();                         
-                                  foreach ($product_list as $key => $value) 
+                                  <?php
+                                  $product_list_assoc = array();
+                                  foreach ($product_list as $key => $value)
                                   {
                                     $product_list_assoc[$value["id"]] = $value;
                                   }
-                                  foreach ($top_products as $key => $value) 
-                                  { 
+                                  foreach ($top_products as $key => $value)
+                                  {
                                       $pro_id = $value["product_id"];
 
                                       $thumb = (isset($product_list_assoc[$pro_id]["thumbnail"]) && !empty($product_list_assoc[$pro_id]["thumbnail"])) ? base_url('upload/ecommerce/'.$product_list_assoc[$pro_id]["thumbnail"]) : base_url('assets/img/example-image.jpg');
@@ -543,7 +568,7 @@
                                       ?>
                                       <div>
                                         <div class="product-item">
-                                          <div class="product-image">                                  
+                                          <div class="product-image">
                                             <a target="_BLANK" href="<?php echo base_url('ecommerce/product/'.$pro_id);?>" ><img style="width:80px;height:80px;border:1px solid #eee;"  src="<?php echo $thumb; ?>" class="img-fluid rounded-circle"></a>
                                           </div>
                                           <div class="product-details">
@@ -556,49 +581,49 @@
                                         </div>
                                       </div>
                                   <?php
-                                  } ?>                          
+                                  } ?>
                               </div>
                             </div>
                           </div>
                         </div>
 
                         <div class="col-12 col-md-12 col-lg-4">
-                          
+
                           <div class="card no_shadow">
                             <div class="card-header">
-                                <h4><i class="fas fa-tasks"></i> <?php echo $this->lang->line("Cart Activities"); ?></h4>                             
+                                <h4><i class="fas fa-tasks"></i> <?php echo $this->lang->line("Cart Activities"); ?></h4>
                             </div>
                             <div class="card-body nicescroll" id="cart_activities" style="padding-right: 10px">
 
-                             
+
                               <ul class="list-unstyled list-unstyled-border">
                                 <?php
-                                if(empty($cart_data)) echo '<div class="alert alert-light">'.$this->lang->line("No activity found").'</div>';                               
-                                foreach ($cart_data as $key => $value) 
-                                { 
+                                if(empty($cart_data)) echo '<div class="alert alert-light">'.$this->lang->line("No activity found").'</div>';
+                                foreach ($cart_data as $key => $value)
+                                {
                                   $hook_ago = date_time_calculator($value['updated_at'],true);
-                                  if($value['action_type']=='add') 
+                                  if($value['action_type']=='add')
                                   {
                                     $hook_icon ='fas fa-cart-plus';
                                     $hook_color = 'text-primary';
                                     $hook_activity = $this->lang->line("New item added to cart");
                                   }
-                                  else if($value['action_type']=='remove') 
+                                  else if($value['action_type']=='remove')
                                   {
                                     $hook_icon ='fas fa-cart-arrow-down';
                                     $hook_color = 'text-danger';
                                     $hook_activity = $this->lang->line("Item removed from cart");
                                   }
-                                  else 
+                                  else
                                   {
                                     $hook_icon = 'fas fa-shopping-bag';
                                     $hook_color = 'text-success';
                                     $currency_icon = isset($currency_icons[strtoupper($value['currency'])]) ? $currency_icons[strtoupper($value['currency'])] : '';
                                     $hook_activity = $this->lang->line("Successful checkout").' <span class="">('.$currency_icon.$value['payment_amount'].')</span>';
                                   }
-                                 
+
                                   $hook_class = $hook_icon.' '.$hook_color;
-                                  
+
                                   $hook_user = ($value['first_name']!='') ? $value['first_name']." ".$value['last_name'] : $value['full_name'];
 
                                   $profile_pic = ($value['profile_pic']!="") ? "<img class='mr-3 rounded-circle' style='height:40px;width:40px;' src='".$value["profile_pic"]."'>" :  "<img class='mr-3  rounded-circle' style='height:40px;width:40px;' src='".base_url('assets/img/avatar/avatar-1.png')."'>";
@@ -606,7 +631,7 @@
                                   $path = ($value["image_path"]!="") ? "<img class='mr-3 rounded-circle' style='height:40px;width:40px;' src='".base_url($value["image_path"])."'></a>" : $profile_pic;
 
                                   echo
-                                  ' 
+                                  '
                                   <li class="media webhook_data pointer" data-id="'.$value['id'].'" data-toggle="tooltip" title="'.$value['email']." (".$value['subscriber_id'].')">
                                       '.$path.'
                                       <div class="media-body">
@@ -614,13 +639,13 @@
                                         <div class="media-title ltr"><i class="'.$hook_class.'"></i> '.$hook_user.'</div>
                                         <span class="text-small">'.$hook_activity.'</span>
                                       </div>
-                                  </li>';                         
-                                } 
-                                ?>                               
+                                  </li>';
+                                }
+                                ?>
                               </ul>
                             </div>
                           </div>
-                        </div>                     
+                        </div>
 
                       </div>
 
@@ -629,47 +654,24 @@
                 </div>
               </div>
             </div>
-        
+
           </div>
         </div>
 
-        <div class="col-lg-2 collef d-none d-lg-block" style="border:.5px solid #dee2e6;">
-          <div class="card main_card" >
-            <div class="card-header">
-                <h4><i class="fas fa-paper-plane"></i> <?php echo $this->lang->line("Actions"); ?></h4>
-            </div>
-            <div class="card-body padding-0">
-              <ul class="nav nav-pills flex-column settings_menu" style="margin-top: 20px;">
-                 <?php
-                    $count_menu=0;
-                    foreach ($menu_array as $key => $value) {
-                      $count_menu++;
-                      $active_class = ($count_menu==1) ? 'active' : '';
 
-                      if($current_store_data['store_type'] == 'digital' && $value['href'] == base_url('ecommerce/business_hour_settings')) continue;
-
-                      if($current_store_data['store_type'] == 'digital' && $value['href'] == base_url('ecommerce/pickup_point_list')) continue;
-
-                      echo ' <li class="nav-item"><a  data-original-title="'.$value['title'].'" href="'.$value['href'].'" class="no_radius nav-link '.$value['class'].' '.$active_class.'" '.$value['attr'].'><i class="'.$value['icon'].'"></i> '.$value['title'].'</a></li>';
-                    }
-                 ?>
-              </ul>
-            </div>
-          </div>
-        </div>
 
 
       </div>
 
-    <?php 
+    <?php
     } ?>
 
   </div>
 </section>
 
 
-<?php 
-if(!empty($current_store_data) && !empty($store_data)) 
+<?php
+if(!empty($current_store_data) && !empty($store_data))
 {
   $max = (!empty($earning_chart_values)) ? max($earning_chart_values) : 0;
   $steps = $max/5;
@@ -717,18 +719,18 @@ if(!empty($current_store_data) && !empty($store_data))
           }]
         },
       }
-    });  
+    });
   </script>
-  <?php 
+  <?php
 } ?>
 
 <script>
-$(document).ready(function($) {  
+$(document).ready(function($) {
     var base_url = '<?php echo base_url(); ?>';
- 
+
     $(document).on('click', '.delete_campaign', function(event) {
         event.preventDefault();
-        
+
         swal({
               title: '<?php echo $this->lang->line("Delete Store"); ?>',
               text: '<?php echo $this->lang->line("Do you really want to delete this store? Deleting store will also delete all related data like cart,purchase,settings etc."); ?>',
@@ -737,7 +739,7 @@ $(document).ready(function($) {
               dangerMode: true,
             })
             .then((willDelete) => {
-              if (willDelete) 
+              if (willDelete)
               {
                   var base_url = '<?php echo site_url();?>';
                   $(this).addClass('btn-danger btn-progress');
@@ -751,21 +753,21 @@ $(document).ready(function($) {
                     url:"<?php echo site_url();?>ecommerce/delete_store",
                     dataType: 'json',
                     data:{campaign_id : campaign_id},
-                    success:function(response){ 
+                    success:function(response){
 
                       $(that).removeClass('btn-danger btn-progress');
                       $(this).addClass('btn-outline-danger');
-                      
+
                       if(response.status == '1')
                       {
                         iziToast.success({title: '<?php echo $this->lang->line("Deleted Successfully"); ?>', message: response.message,position: 'bottomRight'});
                         $("#search_submit").click();
                       }
                       else
-                      iziToast.error({title: '<?php echo $this->lang->line("Error"); ?>',message: response.message ,position: 'bottomRight'});    
+                      iziToast.error({title: '<?php echo $this->lang->line("Error"); ?>',message: response.message ,position: 'bottomRight'});
                     }
                   });
-              } 
+              }
             });
     });
 
@@ -788,7 +790,7 @@ $(document).ready(function($) {
         event.preventDefault();
         $("#reminder_data").modal();
 
-        setTimeout(function(){    
+        setTimeout(function(){
         if (table2 == '')
         {
           var perscroll2;
@@ -806,7 +808,7 @@ $(document).ready(function($) {
                       d.page_id = $('#hidden_page_id').val();
                   }
               },
-              language: 
+              language:
               {
                 url: '<?php echo base_url('assets/modules/datatables/language/'.$this->language.'.json');?>'
               },
@@ -829,9 +831,9 @@ $(document).ready(function($) {
                   }
               },
               scrollX: 'auto',
-              fnDrawCallback: function( oSettings ) { //on paginition page 2,3.. often scroll shown, so reset it and assign it again 
+              fnDrawCallback: function( oSettings ) { //on paginition page 2,3.. often scroll shown, so reset it and assign it again
                   if(areWeUsingScroll)
-                  { 
+                  {
                     if (perscroll2) perscroll2.destroy();
                     perscroll2 = new PerfectScrollbar('#mytable2_wrapper .dataTables_scrollBody');
                   }
@@ -862,8 +864,8 @@ $(document).ready(function($) {
               var span = document.createElement("span");
               span.innerHTML = success_message;
               swal({ title:'<?php echo $this->lang->line("API Response"); ?>', content:span,icon:'info'});
-            } 
-        }); 
+            }
+        });
     });
 
     $(document).on('click','.iframed',function(e){
@@ -875,7 +877,7 @@ $(document).ready(function($) {
       $('.breadcrumb-item').hide();
       $("#store_date_range").hide();
       var title=" : "+$(this).attr("data-original-title");
-      $("#iframe_title").html(title);      
+      $("#iframe_title").html(title);
     });
 
     $("#products-carousel").owlCarousel({
@@ -929,9 +931,9 @@ $(document).ready(function($) {
             <table class="table table-bordered" id="mytable2">
               <thead>
                 <tr>
-                  <th>#</th>      
+                  <th>#</th>
                   <th style="vertical-align:middle;width:20px">
-                      <input class="regular-checkbox" id="datatableSelectAllRows" type="checkbox"/><label for="datatableSelectAllRows"></label>        
+                      <input class="regular-checkbox" id="datatableSelectAllRows" type="checkbox"/><label for="datatableSelectAllRows"></label>
                   </th>
                   <th><?php echo $this->lang->line("First Name"); ?></th>
                   <th><?php echo $this->lang->line("Last Name")?></th>
