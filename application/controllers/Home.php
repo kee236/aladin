@@ -876,7 +876,7 @@ class Home extends CI_Controller
 
         $theme_file_path = "views/site/".$current_theme."/subscription_theme.php";
         if(file_exists(APPPATH.$theme_file_path)) $theme_load = "site/".$current_theme."/subscription_theme";
-        else $theme_load = "site/modern/subscription_theme";
+        else $theme_load = $this->config->item('theme') . "site/modern/subscription_theme";
 
         $data['is_rtl'] = $this->is_rtl;
 
@@ -1114,9 +1114,9 @@ class Home extends CI_Controller
         if($current_theme == '') $current_theme = 'modern';
         $body_file_path = "views/site/".$current_theme."/login.php";
         if(file_exists(APPPATH.$body_file_path))
-            $body_load = "site/".$current_theme."/login";
+            $body_load = $this->config->item('theme')."site/".$current_theme."/login";
         else
-            $body_load = "site/modern/login";
+            $body_load = $this->config->item('theme')."site/modern/login";
 
 
         $data["body"] = $body_load;
