@@ -921,9 +921,13 @@ class Home extends CI_Controller
 
     public function _viewcontroller($data=array())
     {	
+        $theme = $this->config->item('theme');
+
         if (!isset($data['body'])) {
             $data['body']=$this->config->item('default_page_url');
         }
+
+        $data['body'] = $theme.$data['body'];
 
         if (!isset($data['page_title'])) {
             $data['page_title']=$this->lang->line("Admin Panel");
@@ -988,8 +992,8 @@ class Home extends CI_Controller
         
         $data['is_rtl'] = $this->is_rtl;
 
-        if(isset($data['iframe']) && $data['iframe']=='1') $this->load->view('admin/theme/theme_iframe', $data);        
-        else $this->load->view('admin/theme/theme', $data);
+        if(isset($data['iframe']) && $data['iframe']=='1') $this->load->view($theme.'admin/theme/theme_iframe', $data);        
+        else $this->load->view($theme.'admin/theme/theme', $data);
     }
 
 
@@ -1068,7 +1072,7 @@ class Home extends CI_Controller
         if(file_exists(APPPATH.$body_file_path))
             $body_load = "site/".$current_theme."/index";
         else
-            $body_load = "site/modern/index";
+            $body_load = "theme01/site/modern/index";
 
         if(file_exists(APPPATH.'core/licence_type.txt'))
             $this->license_check_action();
@@ -1167,6 +1171,8 @@ class Home extends CI_Controller
             $password = md5($this->input->post('password', true));
 
             $table = 'users';
+
+            // licence check
             if(file_exists(APPPATH.'core/licence_type.txt'))
                 $this->license_check_action();
 
@@ -1178,7 +1184,7 @@ class Home extends CI_Controller
             }
             else $where['where'] = array('email' => $username, 'password' => $password, "deleted" => "0","status"=>"1");
 
-
+            // var_dump($where);exit;
             $info = $this->basic->get_data($table, $where, $select = '', $join = '', $limit = '', $start = '', $order_by = '', $group_by = '', $num_rows = 1);
 
             $count = $info['extra_index']['num_rows'];
