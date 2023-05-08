@@ -777,8 +777,8 @@ class Admin extends Home
         $pixel_code = $this->input->post('pixel_code');
         $google_code = $this->input->post('google_code');
 
-        file_put_contents(APPPATH.'views/include/fb_px.php', $pixel_code, LOCK_EX);
-        file_put_contents(APPPATH.'views/include/google_code.php', $google_code, LOCK_EX);
+        file_put_contents(APPPATH.'views/'.$this->config->item('theme').'include/fb_px.php', $pixel_code, LOCK_EX);
+        file_put_contents(APPPATH.'views/'.$this->config->item('theme').'include/google_code.php', $google_code, LOCK_EX);
 
         $this->session->set_flashdata('success_message', 1);
         redirect('admin/analytics_settings','location');

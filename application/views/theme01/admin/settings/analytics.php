@@ -23,7 +23,7 @@
                      <label class="col-xs-12" for=""><?php echo $this->lang->line("Paste Facebook Pixel Code");?> (<?php echo $this->lang->line("Inside Script Tag");?>)
                      </label>
                      <?php
-                         $pixel_code = file_get_contents(APPPATH . 'views/include/fb_px.php');
+                         $pixel_code = file_get_contents(APPPATH . 'views/theme01/include/fb_px.php');
                      ?>
                      <div class="col-xs-12">
                          <textarea name="pixel_code" class="codeeditor"><?php echo trim($pixel_code);?></textarea>        

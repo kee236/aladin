@@ -24,7 +24,7 @@
   <?php if($is_rtl) { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/rtl.css">
   <?php } ?>
-  <?php include(APPPATH."views/include/js_variables_front.php");?>
+  <?php include(APPPATH."views/theme01/include/js_variables_front.php");?>
   <script src="<?php echo base_url(); ?>assets/modules/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/modules/sweetalert/sweetalert.min.js"></script>
 </head>
