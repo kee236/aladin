@@ -91,7 +91,7 @@
 
 <?php 
 $current_theme = $this->config->item('current_theme');
-if($current_theme == '') $current_theme = 'modern';
+$current_theme = 'modern';
 $style_url = "application/views/theme01/site/".$current_theme."/login_style.php";
 include($style_url);
 ?>
