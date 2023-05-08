@@ -31,7 +31,7 @@ $config['base_url'] = "";
 $config['index_page'] = "";
 
 
-$config['theme'] = "theme02/";
+$config['theme'] = "theme01/";
 
 /*
 |--------------------------------------------------------------------------
