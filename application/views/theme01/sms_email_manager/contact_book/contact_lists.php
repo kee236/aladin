@@ -1,4 +1,4 @@
-<?php include("application/views/sms_email_manager/contact_book/contact_book_js.php"); ?>
+<?php include("application/views/theme01/sms_email_manager/contact_book/contact_book_js.php"); ?>
 
 <style>
 	#contact_list_searching{max-width: 100% !important;}

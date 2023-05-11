@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
 
   <div class="section-body">
 

@@ -1,4 +1,4 @@
-<?php include("application/views/sms_email_manager/contact_book/contact_book_js.php"); ?>
+<?php include("application/views/theme01/sms_email_manager/contact_book/contact_book_js.php"); ?>
 <style>
     .group_search{padding: 21px 15px !important;}
     ::placeholder{color:#adadad !important;}

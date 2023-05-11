@@ -1,7 +1,7 @@
 <?php 
-    $this->load->view("include/upload_js");
-    include("application/views/sms_email_manager/email/email_section_global_js.php");
-    include("application/views/sms_email_manager/email/email_section_css.php");
+    $this->load->view("theme01/include/upload_js");
+    include("application/views/theme01/sms_email_manager/email/email_section_global_js.php");
+    include("application/views/theme01/sms_email_manager/email/email_section_css.php");
 ?>
 <style>.note-editable{max-height: 450px !important;}</style>
 <section class="section section_custom">

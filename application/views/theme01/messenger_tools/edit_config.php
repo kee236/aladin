@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 <section class="content-header">
    <section class="content">
      	<div class="box box-info">

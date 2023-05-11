@@ -15,7 +15,7 @@
   </div>
 
   <?php 
-    $this->load->view('admin/theme/message'); 
+    $this->load->view('theme01/admin/theme/message'); 
     if($this->session->flashdata('xendit_currency_error') != '')
     echo "<div class='alert alert-danger text-center'><i class='fas fa-check-circle'></i> ".$this->session->flashdata('xendit_currency_error')."</div>";
   ?>

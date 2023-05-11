@@ -11,7 +11,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
   <?php if($this->session->flashdata('addon_uplod_success')!="") echo "<div class='alert alert-success text-center'><i class='fa fa-check'></i> ".$this->session->flashdata('addon_uplod_success')."</div>";?>
 
    <div class="section-body">

@@ -1,5 +1,5 @@
 
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 
 <div class="table-responsive data-card">
   <input type="hidden" id="template_media_type" name="template_media_type" value="<?php echo $media_type; ?>">

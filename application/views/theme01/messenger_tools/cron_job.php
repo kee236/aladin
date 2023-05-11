@@ -1,7 +1,7 @@
 <div class="well well_border_left">
 	<h4 class="text-center"> <i class="fa fa-clock-o"></i> <?php echo $this->lang->line("cron job"); ?></h4>
 </div>
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 <section class="content-header">
    <section class="content">
 	    <?php

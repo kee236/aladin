@@ -1,4 +1,4 @@
-<?php include("application/views/sms_email_manager/sms/sms_section_global_js.php"); ?>
+<?php include("application/views/theme01/sms_email_manager/sms/sms_section_global_js.php"); ?>
 <style>
     ::placeholder{font-size:12px;}
     .dropzone{min-height:0px !important;}

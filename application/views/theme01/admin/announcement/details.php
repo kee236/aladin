@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
   <?php $description =  preg_replace("/(https?:\/\/[a-zA-Z0-9\-._~\:\/\?#\[\]@!$&'\(\)*+,;=]+)/", '<a target="_BLANK" href="$1">$1</a>', $xdata['description']); // find and replace links with ancor tag ?>
 
   <div class="section-body">

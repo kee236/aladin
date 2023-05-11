@@ -1,4 +1,4 @@
-<?php include("application/views/sms_email_manager/sms/sms_section_global_js.php"); ?>
+<?php include("application/views/theme01/sms_email_manager/sms/sms_section_global_js.php"); ?>
 
 <style>
     .activities .activity .activity-detail{width:100%;padding: 0 15px 0 0;box-shadow: none !important;}

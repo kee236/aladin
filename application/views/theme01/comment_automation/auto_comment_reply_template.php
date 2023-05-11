@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 <?php $is_demo=$this->is_demo; ?>
 <?php $is_admin=($this->session->userdata('user_type') == "Admin") ? 1:0; ?>
 <link rel="stylesheet" href="<?php echo base_url('assets/css/system/instagram/auto_comment_reply_template.css');?>">

@@ -9,7 +9,7 @@ $subscriber_id=$this->session->userdata($store_id."ecom_session_subscriber_id");
 if($subscriber_id=="")$subscriber_id = isset($_GET['subscriber_id']) ? $_GET['subscriber_id'] : "";
 $form_action = mec_add_get_param($form_action,array("subscriber_id"=>$subscriber_id,"pickup"=>$pickup));
 ?>
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 
 <style type="text/css">
   @media (max-width: 575.98px) {

@@ -1,6 +1,6 @@
 <?php
 $redirect_url = site_url('');
-$this->load->view("include/upload_js");
+$this->load->view("include/theme01/upload_js");
 $full_message_json = $xdata['message'];
 $full_message_array = json_decode($full_message_json,true);
 
@@ -946,7 +946,7 @@ $file_upload_limit = $this->config->item('messengerbot_file_upload_limit');
           <h4><i class="fas fa-eye"></i> <?php echo $this->lang->line("Summary"); ?></h4>
         </div>
         <div class="card-body">
-          <?php include(FCPATH."application/views/messenger_tools/otn_manager/summary.php") ?>            
+          <?php include(FCPATH."application/views/theme01/messenger_tools/otn_manager/summary.php") ?>            
         </div>
      </div>
   </div>

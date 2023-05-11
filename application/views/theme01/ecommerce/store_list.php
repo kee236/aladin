@@ -1,4 +1,4 @@
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 <style>
     #search_page_id{min-width: 150px !important;}
     .list-unstyled-border li{border-bottom: none;margin-bottom: 10px;padding-top: 0;}

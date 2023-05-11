@@ -10,7 +10,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
 
   <style type="text/css">
     #search_page_id{width: 145px;}

@@ -13,7 +13,7 @@ $currency_position = isset($ecommerce_config['currency_position']) ? $ecommerce_
 $decimal_point = isset($ecommerce_config['decimal_point']) ? $ecommerce_config['decimal_point'] : 0;
 $thousand_comma = isset($ecommerce_config['thousand_comma']) ? $ecommerce_config['thousand_comma'] : '0';
 ?>
-<?php $this->load->view('admin/theme/message'); ?>
+<?php $this->load->view('theme01/admin/theme/message'); ?>
 
 <style type="text/css">
 	.activities .activity .activity-detail:before{ content: ''; }

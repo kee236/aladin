@@ -50,6 +50,7 @@ class Messenger_bot_broadcast extends Home
         $data['body'] = "messenger_tools/otn_manager/subscriber_bulk_broadcast_report";
         $data['page_title'] = $this->lang->line("OTN Subscriber Broadcast");
         $page_list = $this->basic->get_data("facebook_rx_fb_page_info",array("where"=>array("user_id"=>$this->user_id,"facebook_rx_fb_user_info_id"=>$this->session->userdata("facebook_rx_fb_user_info"),"bot_enabled"=>"1")),$select='',$join='',$limit='',$start=NULL,$order_by='page_name ASC');
+        $page_info = [];
         foreach($page_list as $value)
         {
             $page_info[$value['id']] = $value['page_name'];

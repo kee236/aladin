@@ -31,7 +31,7 @@
 		</div>
 	</div>
 
-	<?php $this->load->view('admin/theme/message'); ?>
+	<?php $this->load->view('theme01/admin/theme/message'); ?>
 
 	<?php $save_button = '<div class="card-footer bg-whitesmoke">
 	                      <button class="btn btn-primary btn-lg" id="save-btn" type="submit"><i class="fas fa-save"></i> '.$this->lang->line("Save").'</button>

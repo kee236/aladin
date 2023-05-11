@@ -297,6 +297,6 @@ if($this->uri->segment(2)=="create_quick_broadcast_campaign" || $this->uri->segm
 
 </script>
 
-<?php include("application/views/messenger_tools/otn_manager/message_tag_modal.php") ?>
+<?php include("application/views/theme01/messenger_tools/otn_manager/message_tag_modal.php") ?>
 
 

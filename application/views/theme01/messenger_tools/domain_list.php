@@ -1,6 +1,6 @@
 <!-- new datatable section -->
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
   <div class="table-responsive data-card">
     <input type="hidden" id="page_id" name="page_id" value="<?php echo $page_id; ?>">
     <table class="table table-bordered table-sm table-striped" id="mytable">

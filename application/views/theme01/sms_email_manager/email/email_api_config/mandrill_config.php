@@ -1,6 +1,6 @@
 <?php 
-	$this->load->view("include/upload_js");
-	include("application/views/sms_email_manager/email/email_section_global_js.php");
+	$this->load->view("theme01/include/upload_js");
+	include("application/theme01/views/sms_email_manager/email/email_section_global_js.php");
 ?>
 <style>.bbw{border-bottom-width: thin !important;border-bottom:solid .5px #f9f9f9 !important;padding-bottom:20px;}.note-btn{padding: 0 10px !important}.note-editable{min-height:200px !important}</style>
 <section class="section section_custom">

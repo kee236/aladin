@@ -8,7 +8,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
 
   <?php 
   if(array_key_exists(0,$config_data))

@@ -1,5 +1,5 @@
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/theme01/admin/theme/message'); ?>
 
   <input type="hidden" value="<?php echo $page_id; ?>" id="page_id" name="page_id">
   <div class="table-responsive data-card">

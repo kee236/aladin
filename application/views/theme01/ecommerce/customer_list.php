@@ -1,6 +1,6 @@
 <section class="section section_custom pt-2 pr-2">
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
 
   <div class="section-body">
     <div class="row">

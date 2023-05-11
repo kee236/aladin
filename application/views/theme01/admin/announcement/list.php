@@ -16,7 +16,7 @@
     </div>
   </div>
 
-  <?php $this->load->view('admin/theme/message'); ?>
+  <?php $this->load->view('theme01/admin/theme/message'); ?>
   <?php 
   if($this->session->flashdata('mark_seen_success')!='')
   echo "<div class='alert alert-success text-center'><i class='fas fa-check-circle'></i> ".$this->session->flashdata('mark_seen_success')."</div>"; 
