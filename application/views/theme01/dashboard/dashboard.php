@@ -1477,9 +1477,9 @@ $month_name_array = array(
 </script>
 
 
-<?php include(APPPATH.'views/ecommerce/cart_modal.php'); ?>
+<?php include(APPPATH.'views/theme01/ecommerce/cart_modal.php'); ?>
 
-<?php include(APPPATH.'views/calendar/fullcalendar_css.php'); ?>
-<?php include(APPPATH.'views/calendar/fullcalendar_custom_js.php'); ?>
+<?php include(APPPATH.'views/theme01/calendar/fullcalendar_css.php'); ?>
+<?php include(APPPATH.'views/theme01/calendar/fullcalendar_custom_js.php'); ?>
 
 <link rel="stylesheet" href="<?php echo base_url('assets/css/system/dashboard.css'); ?>">

@@ -915,7 +915,7 @@ $(document).ready(function($) {
 </script>
 
 
-<?php include(APPPATH.'views/ecommerce/cart_modal.php'); ?>
+<?php include(APPPATH.'views/theme01/ecommerce/cart_modal.php'); ?>
 
 <div class="modal fade" id="reminder_data" data-backdrop="static" data-keyboard="false">
   <div class="modal-dialog modal-mega" role="document">

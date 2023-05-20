@@ -248,7 +248,7 @@
 
 </script>
 
-<?php include(FCPATH.'application/views/messenger_tools/subscriber_actions_common_js.php');?>
+<?php include(FCPATH.'application/views/theme01/messenger_tools/subscriber_actions_common_js.php');?>
 
 
 <!-- Modal -->
