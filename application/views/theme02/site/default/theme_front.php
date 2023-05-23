@@ -195,8 +195,8 @@
     <script src="<?php echo base_url();?>assets/site_new/js/main.js"></script>
 
     <!-- cookiealert section -->
-    <?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+    <?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?> 
     <?php include("application/modules/blog/views/blog_js.php"); ?>
     
     

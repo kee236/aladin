@@ -59,6 +59,10 @@
               <input id="password" type="password" class="form-control" value="<?php echo $default_pass;?>" name="password" tabindex="2" required>
             </div>
 
+            <input type="radio" name="theme_setting" id="theme_setting1" value="theme01/"> Theme01
+            <input type="radio" name="theme_setting" id="theme_setting2" value="theme02/"> Theme02
+            <br><br>
+
             <div class="form-group">
               <button type="submit" class="btn btn-primary btn-lg btn-block login_btn" tabindex="4">
                 <i class="fa fa-sign-in-alt"></i> <?php echo $this->lang->line("login"); ?>

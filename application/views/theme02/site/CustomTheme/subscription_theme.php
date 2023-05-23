@@ -27,5 +27,5 @@
   </div>
 </body>
 
-<?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-<?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+<?php $this->load->view(getTheme()."include/fb_px"); ?> 
+<?php $this->load->view(getTheme()."include/google_code"); ?> 

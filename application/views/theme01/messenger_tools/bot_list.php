@@ -1,5 +1,5 @@
 <?php 
-  $this->load->view($this->config->item('theme')."include/upload_js"); 
+  $this->load->view($this->session->userdata('theme')."include/upload_js"); 
   
   $image_upload_limit = 1; 
   if($this->config->item('messengerbot_image_upload_limit') != '')
@@ -7,7 +7,7 @@
 
 ?>
 
-<?php include(APPPATH.'views/'.$this->config->item('theme').'messenger_tools/bot_list_css.php'); ?>
+<?php include(APPPATH.'views/'.getTheme().'messenger_tools/bot_list_css.php'); ?>
 
 
 <section class="section">

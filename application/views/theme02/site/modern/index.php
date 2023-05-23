@@ -861,8 +861,8 @@ Description: This is a default theme provided by the Author of ChatPion. We high
 
 	<script src="<?php echo base_url('assets/js/system/site_default.js');?>"></script>
 
-	<?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+	<?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?> 
 
     <?php if($is_rtl) { ?>
     	<style type="text/css">

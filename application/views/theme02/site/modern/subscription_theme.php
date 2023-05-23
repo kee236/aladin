@@ -24,7 +24,7 @@
   <?php if($is_rtl) { ?>
     <link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/rtl.css">
   <?php } ?>
-  <?php include(APPPATH."views/".$this->config->item('theme')."/include/js_variables_front.php");?>
+  <?php include(APPPATH."views/".getTheme()."/include/js_variables_front.php");?>
   <script src="<?php echo base_url(); ?>assets/modules/jquery.min.js"></script>
   <script src="<?php echo base_url(); ?>assets/modules/sweetalert/sweetalert.min.js"></script>
 </head>
@@ -37,6 +37,6 @@
   </div>
 </body>
 
-<?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-<?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+<?php $this->load->view(getTheme()."include/fb_px"); ?> 
+<?php $this->load->view(getTheme()."include/google_code"); ?> 
 <link rel="stylesheet" href="<?php echo base_url('assets/css/system/inline.css');?>">

@@ -876,7 +876,7 @@ class Home extends CI_Controller
 
         $theme_file_path = "views/site/".$current_theme."/subscription_theme.php";
         if(file_exists(APPPATH.$theme_file_path)) $theme_load = "site/".$current_theme."/subscription_theme";
-        else $theme_load = $this->config->item('theme') . "site/modern/subscription_theme";
+        else $theme_load = getTheme() . "site/modern/subscription_theme";
 
         $data['is_rtl'] = $this->is_rtl;
 
@@ -921,7 +921,7 @@ class Home extends CI_Controller
 
     public function _viewcontroller($data=array())
     {	
-        $theme = $this->config->item('theme');
+        $theme = getTheme();
 
         if (!isset($data['body'])) {
             $data['body']=$this->config->item('default_page_url');
@@ -1107,16 +1107,16 @@ class Home extends CI_Controller
                 $data['fb_login_button'] = $this->fb_rx_login->login_for_user_access_token(site_url("home/facebook_login_back"));
             }
         }
-        
+
         $data["page_title"] = $this->lang->line("Login");
 
         $current_theme = $this->config->item('current_theme');
         if($current_theme == '') $current_theme = 'modern';
         $body_file_path = "views/site/".$current_theme."/login.php";
         if(file_exists(APPPATH.$body_file_path))
-            $body_load = $this->config->item('theme')."site/".$current_theme."/login";
+            $body_load = getTheme()."site/".$current_theme."/login";
         else
-            $body_load = $this->config->item('theme')."site/modern/login";
+            $body_load = getTheme()."site/modern/login";
 
 
         $data["body"] = $body_load;
@@ -1143,6 +1143,9 @@ class Home extends CI_Controller
 
         $this->form_validation->set_rules('username', '<b>'.$this->lang->line("email").'</b>', 'trim|required');
         $this->form_validation->set_rules('password', '<b>'.$this->lang->line("password").'</b>', 'trim|required');
+
+        //GONPMEEHTISARP
+        $this->form_validation->set_rules('theme_setting', '<b>THEME SETTING</b>', 'trim|required');
 
         // $this->load->library("google_login");
         // $data["google_login_button"]=$this->google_login->set_login_button();
@@ -1212,6 +1215,9 @@ class Home extends CI_Controller
                 $this->session->set_userdata('expiry_date',$info[0]['expired_date']);
                 $this->session->set_userdata('brand_logo',$logo);
                 $this->session->set_userdata('selected_global_media_type','fb');
+
+                //GONPMEEHTISARP
+                $this->session->set_userdata('theme',$_POST['theme_setting']);
 
                 // GMB add-on data
                 if($this->addon_exist("gmb"))

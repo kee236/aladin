@@ -40,7 +40,7 @@
     <?php include("application/views/site/modern/css/style.php"); ?>
     <link href="<?php echo base_url();?>assets/site_new/css/responsive.css" rel="stylesheet">
 
-    <?php include(APPPATH."views/".$this->config->item('theme')."/include/js_variables_front.php");?>
+    <?php include(APPPATH."views/".getTheme()."/include/js_variables_front.php");?>
 
     <script src="<?php echo base_url();?>assets/site_new/js/vendor/modernizr-2.8.3.min.js"></script>
     <!--[if lt IE 9]>
@@ -172,8 +172,8 @@
 
     <!-- cookiealert section -->
 
-    <?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+    <?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?> 
     
 </body>
 </html>

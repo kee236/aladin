@@ -184,8 +184,8 @@
     <script src="<?php echo base_url('home/xit_load_files/js/jquery.sticky.js'); ?>"></script>
     <script src="<?php echo base_url('home/xit_load_files/js/main.js'); ?>"></script>
 
-    <?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?>
+    <?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?>
     <?php include("application/modules/blog/views/blog_js.php"); ?>
     
 </body>

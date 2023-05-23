@@ -1020,5 +1020,17 @@ function is_email($email)
 }
 
 
+function getTheme()
+{
+  $CI =& get_instance();
+  if($CI->session->userdata('theme')){
+    return $CI->session->userdata('theme');
+  }else{
+    return $CI->config->item('theme');
+  }
+}
+
+
+
 
 

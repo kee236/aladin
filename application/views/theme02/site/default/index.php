@@ -964,8 +964,8 @@ Description: This is a default theme provided by the Author of XeroChat. We high
 
     <!-- cookiealert section -->
 
-    <?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+    <?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?> 
     
 </body>
 </html>

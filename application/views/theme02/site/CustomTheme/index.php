@@ -876,8 +876,8 @@ Description: Lorem Ipsum is simply dummy text of the printing and typesetting in
     </div> <!-- end of copyright --> 
     <!-- end of copyright -->
     
-    <?php $this->load->view($this->config->item('theme')."include/fb_px"); ?> 
-    <?php $this->load->view($this->config->item('theme')."include/google_code"); ?> 
+    <?php $this->load->view(getTheme()."include/fb_px"); ?> 
+    <?php $this->load->view(getTheme()."include/google_code"); ?> 
     	
     <!-- Scripts -->
     <script src="<?php echo base_url('home/xit_load_files/js/jquery.min.js'); ?>"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
